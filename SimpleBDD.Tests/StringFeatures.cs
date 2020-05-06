@@ -4,8 +4,8 @@ namespace SimpleBDD.Tests
 {
     public class StringFeatures
     {
-        private readonly IFeature<string> spec 
-            = new Feature<string>("string test");
+        private readonly ISpecification<string> spec 
+            = new Specification<string>("string test");
 
         [Fact]
         public void Should_Apply_Transformations_To_String_Value()

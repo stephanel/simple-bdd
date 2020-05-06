@@ -6,8 +6,8 @@ namespace SimpleBDD.Tests
 {
     public class CalculatorAddFeatures
     {
-        private readonly IFeature<CalculatorAdd> spec 
-            = new Feature<CalculatorAdd>("calculator test");
+        private readonly ISpecification<CalculatorAdd> spec 
+            = new Specification<CalculatorAdd>("calculator test");
 
         [Fact]
         public void Should_Sum_Entered_Values()

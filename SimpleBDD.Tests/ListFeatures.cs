@@ -5,8 +5,8 @@ namespace SimpleBDD.Tests
 {
     public class ListFeatures
     {
-        private readonly IFeature<List<string>> spec 
-            = new Feature<List<string>>("collection test");
+        private readonly ISpecification<List<string>> spec 
+            = new Specification<List<string>>("collection test");
 
         [Fact]
         public void Should_Apply_Transformations_To_List_Values()
@@ -15,7 +15,7 @@ namespace SimpleBDD.Tests
                 .Given(new List<string>() { "abc", "def", "ghi" })
                 .When(remove_entry_def)
                 .And(add_entry_xyz_at_first_position)
-                .Then(list_does_not_contains_def);
+                .Then(list_should_not_contain_def);
         }
 
         private List<string> remove_entry_def(List<string> value)
@@ -32,7 +32,7 @@ namespace SimpleBDD.Tests
             return value;
         }
 
-        private void list_does_not_contains_def(List<string> value)
+        private void list_should_not_contain_def(List<string> value)
         {
             Assert.Equal(3, value.Count);
             Assert.Collection(value,
