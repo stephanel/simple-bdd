@@ -6,6 +6,6 @@ namespace SimpleBDD
 {
     public interface IThen<T>
     {
-        IThen<T> And(Func<T, T> action);
+        IThen<T> And(Action<T> action);
     }
 }

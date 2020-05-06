@@ -13,8 +13,9 @@ namespace SimpleBDD.Tests
             spec
                 .Given("abc")
                 .When(remove_character_c)
-                .And(add_f)
-                .Then(value_should_be_equal_to_ab);
+                .And(add_character_f)
+                .Then(value_should_be_equal_to_abf)
+                .And(lenght_should_be_3);
         }
 
         private string remove_character_c(string value)
@@ -22,14 +23,19 @@ namespace SimpleBDD.Tests
             return value.Replace("c", string.Empty);
         }
 
-        private string add_f(string value)
+        private string add_character_f(string value)
         {
             return $"{value}f";
         }
 
-        private void value_should_be_equal_to_ab(string value)
+        private void value_should_be_equal_to_abf(string value)
         {
             Assert.Equal("abf", value);
+        }
+
+        private void lenght_should_be_3(string value)
+        {
+            Assert.Equal(3, value.Length);
         }
     }
 }

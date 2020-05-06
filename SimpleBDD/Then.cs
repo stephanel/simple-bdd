@@ -8,9 +8,9 @@ namespace SimpleBDD
             : base(context)
         { }
 
-        public IThen<T> And(Func<T, T> action)
+        public IThen<T> And(Action<T> action)
         {
-            _context = action.Invoke(_context);
+            action.Invoke(_context);
             return this;
         }
     }
