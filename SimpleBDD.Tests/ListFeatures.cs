@@ -5,8 +5,7 @@ namespace SimpleBDD.Tests
 {
     public class ListFeatures
     {
-        private readonly ISpecification<List<string>> spec 
-            = new Specification<List<string>>("collection test");
+        private readonly ISpecification<List<string>> spec = new Specification<List<string>>();
 
         [Fact]
         public void Should_Apply_Transformations_To_List_Values()

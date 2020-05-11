@@ -3,12 +3,9 @@
     public class Specification<T> : ISpecification<T>
     {
         T _context;
-        readonly string _specTitle;
 
-        public Specification(string specTitle)
-        {
-            _specTitle = specTitle;
-        }
+        public Specification()
+        { }
 
         public IGiven<T> Given(T context)
         {
