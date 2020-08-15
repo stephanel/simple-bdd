@@ -4,6 +4,8 @@ A simple BDD test framework experiment.
 We often add some complexity to our tests. The goal of this experiment was to have a fluent API that allows to write easily readable specifications.
 For that, we wanted to extract all the complexity from the tests, and to have specifications that expess with no ambiguity the intents.
 
+It is possible to use any assertions framework.
+
 An example, of the expected result:
 ```csharp
 spec
