@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29721.120
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBDD", "SimpleBDD\SimpleBDD.csproj", "{E24AB1E4-47B1-4CF8-A9F4-067C866DAE3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBDD", "SimpleBDD\SimpleBDD.csproj", "{E24AB1E4-47B1-4CF8-A9F4-067C866DAE3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBDD.Tests", "SimpleBDD.Tests\SimpleBDD.Tests.csproj", "{29D670A2-ED38-477A-AE4B-54D8A5FCA33A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBDD.Tests", "SimpleBDD.Tests\SimpleBDD.Tests.csproj", "{29D670A2-ED38-477A-AE4B-54D8A5FCA33A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

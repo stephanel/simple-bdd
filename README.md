@@ -23,7 +23,7 @@ public class StringFeatures
     [Fact]
     public void Should_Apply_Transformations_To_String_Value()
     {
-        Specification<string> spec = new Specification<string>("string test");
+        Specification<string> spec = new Specification<string>();
 
         spec
             .Given("abc")
