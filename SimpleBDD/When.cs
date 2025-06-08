@@ -1,23 +1,21 @@
 ﻿using System;
 
-namespace SimpleBDD
+namespace SimpleBDD;
+
+public interface IWhen<T>
 {
-    public class When<T> : ContextBase<T>, IWhen<T>
+    IWhen<T> And(Func<T, T> action);
+    IThen<T> Then(Action<T> action);
+}
+
+internal class When<T>(T context) : ContextBase<T>(context), IWhen<T>
+{
+    public IWhen<T> And(Func<T, T> action)
+        => new When<T>(action.Invoke(Context));
+
+    public IThen<T> Then(Action<T> action)
     {
-        public When(T context)
-            : base(context)
-        { }
-
-        public IWhen<T> And(Func<T, T> action)
-        {
-            _context = action.Invoke(_context);
-            return this;
-        }
-
-        public IThen<T> Then(Action<T> action)
-        {
-            action.Invoke(_context);
-            return new Then<T>(_context);
-        }
+        action.Invoke(Context);
+        return new Then<T>(Context);
     }
 }

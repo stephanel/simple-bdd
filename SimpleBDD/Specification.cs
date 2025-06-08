@@ -1,16 +1,6 @@
-﻿namespace SimpleBDD
+﻿namespace SimpleBDD;
+
+public static class Specification
 {
-    public class Specification<T> : ISpecification<T>
-    {
-        T _context;
-
-        public Specification()
-        { }
-
-        public IGiven<T> Given(T context)
-        {
-            _context = context;
-            return new Given<T>(_context);
-        }
-    }
+    public static IGiven<T> Given<T>(T context) => new Given<T>(context);
 }

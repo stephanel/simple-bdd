@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SimpleBDD;
 
-namespace SimpleBDD
+internal class ContextBase<T>(T context)
 {
-    public class ContextBase<T>
-    {
-        protected T _context;
-
-        public ContextBase(T context)
-        {
-            _context = context;
-        }
-    }
+    protected readonly T Context = context;
 }

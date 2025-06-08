@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace SimpleBDD
-{
-    public class Then<T> : ContextBase<T>, IThen<T>
-    {
-        public Then(T context)
-            : base(context)
-        { }
+namespace SimpleBDD;
 
-        public IThen<T> And(Action<T> action)
-        {
-            action.Invoke(_context);
-            return this;
-        }
+public interface IThen<out T>
+{
+    IThen<T> And(Action<T> action);
+}
+
+internal class Then<T>(T context) : ContextBase<T>(context), IThen<T>
+{
+    public IThen<T> And(Action<T> action)
+    {
+        action.Invoke(Context);
+        return new Then<T>(Context);
     }
 }
