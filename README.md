@@ -23,36 +23,20 @@ using Xunit;
 public class StringFeatures
 {
     [Fact]
-    public void Should_Apply_Transformations_To_String_Value()
-    {
-        Specification<string> spec = new Specification<string>();
-
-        spec
+    public void Should_Apply_Transformations_To_String_Value() =>
+        new Specification<string>()
             .Given("abc")
             .When(remove_character_c)
             .And(add_character_f)
             .Then(value_should_be_equal_to_abf)
             .And(lenght_should_be_3);
-    }
 
-    private string remove_character_c(string value)
-    {
-        return value.Replace("c", string.Empty);
-    }
+    private string remove_character_c(string value) => value.Replace("c", string.Empty);
 
-    private string add_character_f(string value)
-    {
-        return $"{value}f";
-    }
+    private string add_character_f(string value) =>  $"{value}f";
 
-    private void value_should_be_equal_to_abf(string value)
-    {
-        Assert.Equal("abf", value);
-    }
+    private void value_should_be_equal_to_abf(string value) => Assert.Equal("abf", value);
 
-    private void lenght_should_be_3(string value)
-    {
-        Assert.Equal(3, value.Length);
-    }
+    private void lenght_should_be_3(string value) =>  Assert.Equal(3, value.Length);
 }
 ```
